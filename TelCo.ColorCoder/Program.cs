@@ -11,8 +11,7 @@ namespace TelCo.ColorCoder
     /// mapping of pair number to color and color to pair number.
     /// </summary>
     class Program
-    {   
-        /// <summary>
+    {   /// <summary>
         /// Test code for the class
         /// </summary>
         /// <param name="args"></param>
@@ -44,7 +43,8 @@ namespace TelCo.ColorCoder
             testPair2 = new ColorPair() { majorColor = Color.Red, minorColor = Color.Blue };
             pairNumber = NumberToColor.GetPairNumberFromColor(testPair2);
             Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", testPair2, pairNumber);
-            Debug.Assert(pairNumber == 6);
+            Debug.Assert(pairNumber == 6);           
+            ManualMap.ToString();
         }
     }
 }
