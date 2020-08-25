@@ -15,7 +15,7 @@ namespace TelCo.ColorCoder
     /// <summary>
     /// default constructor required for parametrized constructor  
     /// </summary>
-    publicColorCodes(){}
+    public ColorCodes(){}
     
     /// <summary>
     /// parametrized constructor to initialize class varibles using parameters 
