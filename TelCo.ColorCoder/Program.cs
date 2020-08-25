@@ -5,10 +5,8 @@ using System.Drawing;
 namespace TelCo.ColorCoder
 {   /// <summary>
     /// The 25-pair color code, originally known as even-count color code, 
-    /// is a color code used to identify individual conductors in twisted-pair 
-    /// wiring for telecommunications.
-    /// This class provides the color coding and 
-    /// mapping of pair number to color and color to pair number.
+    /// is a color code used to identify individual conductors in twisted-pair wiring for telecommunications.
+    /// This class provides the color coding and mapping of pair number to color and color to pair number.
     /// </summary>
     class Program
     {   /// <summary>
@@ -18,35 +16,35 @@ namespace TelCo.ColorCoder
         private static void Main(string[] args)
         {
             int pairNumber = 4;
-            ColorPair testPair1 = ColorToNumber.GetColorFromPairNumber(pairNumber);
+            ColorPair testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.White);
             Debug.Assert(testPair1.minorColor == Color.Brown);
 
             pairNumber = 5;
-            testPair1 = ColorToNumber.GetColorFromPairNumber(pairNumber);
+            testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.White);
             Debug.Assert(testPair1.minorColor == Color.SlateGray);
 
             pairNumber = 23;
-            testPair1 = ColorToNumber.GetColorFromPairNumber(pairNumber);
+            testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.Violet);
             Debug.Assert(testPair1.minorColor == Color.Green);
 
             ColorPair testPair2 = new ColorPair() { majorColor = Color.Yellow, minorColor = Color.Green };
-            pairNumber = NumberToColor.GetPairNumberFromColor(testPair2);
+            pairNumber =ColorCodeConversion.GetPairNumberFromColor(testPair2);
             Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}\n", testPair2, pairNumber);
             Debug.Assert(pairNumber == 18);
 
             testPair2 = new ColorPair() { majorColor = Color.Red, minorColor = Color.Blue };
-            pairNumber = NumberToColor.GetPairNumberFromColor(testPair2);
+            pairNumber = ColorCodeConversion.GetPairNumberFromColor(testPair2);
             Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", testPair2, pairNumber);
             Debug.Assert(pairNumber == 6);
             
             for(int pairNumber =1 ; pairNumber <= 25; pairNumber++){
-                testPair1 = ColorToNumber.GetColorFromPairNumber(pairNumber);
+                testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
                 ColorCodes _colorCodes = new colorCodes(pairNumber,testPair1);
                 Console.WriteLine(_colorCodes.ToString());
                 Debug.Assert(_colorCodes._PairNumber = pairNumber);
