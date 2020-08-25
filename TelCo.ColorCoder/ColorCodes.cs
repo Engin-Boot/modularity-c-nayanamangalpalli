@@ -9,8 +9,8 @@ namespace TelCo.ColorCoder
   /// </summary>
   class ColorCodes{
     
-    int _PairNumber;
-    ColorPair _ColorPair;
+    public int _PairNumber;
+    public ColorPair _ColorPair;
     
     /// <summary>
     /// default constructor required for parametrized constructor  
