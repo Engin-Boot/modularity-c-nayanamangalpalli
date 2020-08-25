@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace TelCo.ColorCoder
 {
-        class ColorToNumber{
+        class NumberCodeConversion{
 
                 /// <summary>
                 /// Given a pair number function returns the major and minor colors in that order
@@ -14,8 +14,8 @@ namespace TelCo.ColorCoder
                 public static ColorPair GetColorFromPairNumber(int pairNumber)
                 {
                     // The function supports only 1 based index. Pair numbers valid are from 1 to 25
-                    int minorSize = ColorMap.colorMapMinor.Length;
-                    int majorSize = ColorMap.colorMapMajor.Length;
+                    int minorSize = ColorCodeArray.colorMapMinor.Length;
+                    int majorSize = ColorCodeArray.colorMapMajor.Length;
                     if (pairNumber < 1 || pairNumber > minorSize * majorSize)
                     {
                         throw new ArgumentOutOfRangeException(
@@ -28,8 +28,8 @@ namespace TelCo.ColorCoder
                     int minorIndex = zeroBasedPairNumber % minorSize;
 
                     // Construct the return val from the arrays
-                    ColorPair pair = new ColorPair() { majorColor = ColorMap.colorMapMajor[majorIndex],
-                        minorColor = ColorMap.colorMapMinor[minorIndex] };
+                    ColorPair pair = new ColorPair() { majorColor = ColorCodeArray.colorMapMajor[majorIndex],
+                        minorColor = ColorCodeArray.colorMapMinor[minorIndex] };
 
                     // return the value
                     return pair;
