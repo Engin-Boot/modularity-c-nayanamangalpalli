@@ -6,7 +6,7 @@ namespace TelCo.ColorCoder
 {
   class ManualMap{
     
-    public static void ToString(){
+    public override void ToString(){
       for(int pairNumber = 1; pairNumber < 26; pairNumber++){
 
           ColorPair testPair1 = ColorToNumber.GetColorFromPairNumber(pairNumber);
