@@ -16,19 +16,19 @@ namespace TelCo.ColorCoder
         private static void Main(string[] args)
         {
             int pairNumber = 4;
-            ColorPair testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
+            ColorPair testPair1 = NumberCodeConversion.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.White);
             Debug.Assert(testPair1.minorColor == Color.Brown);
 
             pairNumber = 5;
-            testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
+            testPair1 = NumberCodeConversion.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.White);
             Debug.Assert(testPair1.minorColor == Color.SlateGray);
 
             pairNumber = 23;
-            testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
+            testPair1 = NumberCodeConversion.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.Violet);
             Debug.Assert(testPair1.minorColor == Color.Green);
@@ -43,13 +43,13 @@ namespace TelCo.ColorCoder
             Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", testPair2, pairNumber);
             Debug.Assert(pairNumber == 6);
             
-            for(int pairNumber =1 ; pairNumber <= 25; pairNumber++){
-                testPair1 = NumberCodeCoversion.GetColorFromPairNumber(pairNumber);
-                ColorCodes _colorCodes = new colorCodes(pairNumber,testPair1);
+            for(int pairNumberIndex =1 ; pairNumberIndex <= 25; pairNumberIndex++){
+                testPair1 = NumberCodeConversion.GetColorFromPairNumber(pairNumberIndex);
+                ColorCodes _colorCodes = new ColorCodes(pairNumberIndex,testPair1);
                 Console.WriteLine(_colorCodes.ToString());
-                Debug.Assert(_colorCodes._PairNumber = pairNumber);
-                Debug.Assert(_colorCodes._Colorpair.majorColor = testPair1.majorColor);
-                Debug.Assert(_colorCodes._Colorpair.minorColor = testPair1.minorColor);
+                Debug.Assert(_colorCodes._PairNumber == pairNumberIndex);
+                Debug.Assert(_colorCodes._ColorPair.majorColor == testPair1.majorColor);
+                Debug.Assert(_colorCodes._ColorPair.minorColor == testPair1.minorColor);
             }
         }
     }
