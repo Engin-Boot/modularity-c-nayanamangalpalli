@@ -29,7 +29,7 @@ namespace TelCo.ColorCoder
     /// Overridden method to return string of number and color 
     /// </summary>
     public override string ToString(){
-      return string.Format("Pair Number: {0},Colors: {1}\n", PairNumber, colorPair); 
+      return string.Format("Pair Number: {0}, {1}\n", _PairNumber, _ColorPair.ToString()); 
     }
       
   }
